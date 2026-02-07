@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-02-07T18:37:28.074Z",
+  "updatedAt": "2026-02-07T18:38:43.558Z",
   "background": {
     "src": null,
     "fit": "cover"
@@ -10,7 +10,7 @@
       "id": "903439ba633f8819c39641cc7",
       "src": "assets/1770489385234_aternia.games_token.png",
       "x": 80,
-      "y": 82,
+      "y": 80,
       "w": 240,
       "h": 240,
       "z": 1,
