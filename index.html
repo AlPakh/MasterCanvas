@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DND Canvas</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div id="topHint" class="topHint hidden"></div>
+
+    <div id="dmBar" class="dmBar hidden">
+        <div class="dmRow">
+            <span class="dmTitle">DM</span>
+
+            <button id="btnConfig" class="btn">Config</button>
+            <button id="btnToken" class="btn">Token</button>
+
+            <label class="btn fileBtn">
+                Background
+                <input id="fileBg" type="file" accept="image/*" hidden />
+            </label>
+
+            <label class="btn fileBtn">
+                Foreground
+                <input id="fileFg" type="file" accept="image/*" hidden />
+            </label>
+
+            <button id="btnCaptions" class="btn">Captions</button>
+            <button id="btnBringFront" class="btn">Front</button>
+            <button id="btnSendBack" class="btn">Back</button>
+            <button id="btnDelete" class="btn danger">Delete</button>
+
+            <div class="dmSpacer"></div>
+
+            <button id="btnSave" class="btn primary">Save</button>
+            <button id="btnExitDm" class="btn">Exit</button>
+        </div>
+
+        <div id="dmConfig" class="dmConfig hidden">
+            <div class="cfgGrid">
+                <label>
+                    Owner
+                    <input id="cfgOwner" type="text" placeholder="username" />
+                </label>
+                <label>
+                    Repo
+                    <input id="cfgRepo" type="text" placeholder="repo" />
+                </label>
+                <label>
+                    Branch
+                    <input id="cfgBranch" type="text" placeholder="main" />
+                </label>
+                <label>
+                    Poll interval (ms)
+                    <input id="cfgPoll" type="number" min="500" step="100" />
+                </label>
+            </div>
+            <div class="cfgActions">
+                <button id="btnCfgApply" class="btn primary">Apply</button>
+                <button id="btnCfgClose" class="btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="stage" class="stage">
+        <img id="bg" class="bg" alt="" />
+        <div id="layer" class="layer"></div>
+    </div>
+
+    <div id="captionBar" class="captionBar">
+        <div id="captions" class="captions"></div>
+    </div>
+
+    <div id="captionModal" class="modal hidden">
+        <div class="modalCard">
+            <div class="modalTitle">Captions for selected item</div>
+            <textarea id="captionText" class="captionText" placeholder="Одна подпись на строку"></textarea>
+            <div class="modalActions">
+                <button id="btnCapApply" class="btn primary">Apply</button>
+                <button id="btnCapClose" class="btn">Close</button>
+            </div>
+            <div class="modalHint">
+                Drag - перемещение. Resize - за правый нижний маркер. Shift+Drag - быстрый resize.
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
